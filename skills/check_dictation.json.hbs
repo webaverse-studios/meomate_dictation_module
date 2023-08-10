@@ -6,13 +6,13 @@
     "prompt": "If you saw human input 'start dictation', then you respond with 'here's the dictation practice'.",
     "value": "here's the dictation practice",
     "formats": {
-      "standard": "Checking dictation"
+      "standard": "Checked dictation: {{{formatForJSON value}}}"
     },
     "handlerHook": "dictation:handle_check_dictation_skill",
 
     "hack_prompt": "If you saw human input start with `>` sign.",
-    "hack_pasttense": "I'll check if the human's dictation result is correct.",
-    "hack_usage": "{CHECK_DICTATION}Based on the conversation, and the last thing the user said, check if the human's dictation result is correct.",
+    "hack_pasttense": "The human's dictation result is {{skill_value}}.",
+    "hack_usage": "Based on the conversation, and the last thing the user said, check if the human's dictation result is {correct} or {wrong}.",
     "hack_delay": true,
     "hack_desc": ""
   }
