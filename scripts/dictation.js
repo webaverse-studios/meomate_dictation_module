@@ -6,6 +6,10 @@
 function _handleDictationSkill(event) {
     // debugger
     window.companion.SendMessage({type: "MAKE_DICTATION", user: event.name, value: event.value}, {run_immediately: true});
+    // window.companion.SendMessage({type: "TEXT", user: event.name, value: event.value}, {run_immediately: true});
+    setTimeout(() => {
+        window.hooks.emit("hack_delay", "Speak the dictation word three times, don't speak anything else!");
+    }, 100);
 }
 
 function _handleApiResponse(response) {
