@@ -3,12 +3,21 @@
  * Gives the companion the ability make jokes, memes, silly words, or animated gifs
  */
 
-function _handleDictationSkill(event) {
+function _handleMakeDictationSkill(event) {
     // debugger
     window.companion.SendMessage({type: "MAKE_DICTATION", user: event.name, value: event.value}, {run_immediately: true});
     // window.companion.SendMessage({type: "TEXT", user: event.name, value: event.value}, {run_immediately: true});
     setTimeout(() => {
-        window.hooks.emit("hack_delay", "Speak the dictation word three times, don't speak anything else!");
+        window.hooks.emit("hack_delay", "Speak the latest dictation word three times, don't speak anything else! And wait human's answer, then check if human's answer is correct.");
+    }, 100);
+}
+
+function _handleCheckDictationSkill(event) {
+    // debugger
+    window.companion.SendMessage({type: "CHECK_DICTATION", user: event.name, value: event.value}, {run_immediately: true});
+    // window.companion.SendMessage({type: "TEXT", user: event.name, value: event.value}, {run_immediately: true});
+    setTimeout(() => {
+        window.hooks.emit("hack_delay", "Check if the human's dictation result is correct, don't speak anything else!");
     }, 100);
 }
 
@@ -26,7 +35,8 @@ function _handleApiResponse(response) {
 }
 
 export function init() {
-    window.hooks.on('dictation:handle_dictation_skill', _handleDictationSkill)
+    window.hooks.on('dictation:handle_make_dictation_skill', _handleMakeDictationSkill)
+    window.hooks.on('dictation:handle_check_dictation_skill', _handleCheckDictationSkill)
     // window.hooks.on('comedian:handle_meme_skill', _handleMemeSkill)
     // window.hooks.on('models:response:comedian:humorapi', _handleApiResponse)
 }

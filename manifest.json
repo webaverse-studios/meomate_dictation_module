@@ -18,7 +18,8 @@
     "models/dictation.json.hbs"
   ],
   "skills": [
-    "skills/dictation.json.hbs"
+    "skills/make_dictation.json.hbs",
+    "skills/check_dictation.json.hbs"
   ],
   "scripts": [
     "scripts/dictation.js"
