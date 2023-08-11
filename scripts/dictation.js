@@ -17,7 +17,7 @@ function _handleCheckDictationSkill(event) {
     window.companion.SendMessage({type: "CHECK_DICTATION", user: event.name, value: event.value}, {run_immediately: true});
     // window.companion.SendMessage({type: "TEXT", user: event.name, value: event.value}, {run_immediately: true});
     setTimeout(() => {
-        window.hooks.emit("hack_delay", "Check if the user's listen and write down result is correct, don't speak anything else!");
+        window.hooks.emit("hack_delay", "Check if the user's listen and write down result is correct, and make some comments.");
     }, 100);
 }
 
