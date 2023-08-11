@@ -3,16 +3,16 @@
     "displayName": "Make Dictation",
     "description": "The companion will make a dictation practice.",
     "skill": "MAKE_DICTATION",
-    "prompt": "If you saw human input 'start dictation', then you respond with 'here's the dictation practice'.",
+    "prompt": "If you saw user input 'make dictation', then you respond with 'here's the dictation practice'.",
     "value": "here's the dictation practice",
     "formats": {
-      "standard": "Made dictation: {{{formatForJSON value}}}"
+      "standard": "Listening practice question: {{{formatForJSON value}}}"
     },
     "handlerHook": "dictation:handle_make_dictation_skill",
 
-    "hack_prompt": "If you saw human input `start dictation`.",
-    "hack_pasttense": "I just made a dictation practice of the {{skill_value}} word for human to dictate.",
-    "hack_usage": "Based on the conversation, and the last thing the user said. Determine a random intermediate level word you want to let user to dictate.\nExplain why you chose the word. Make sure the word you selected is inside of curly brackets '{}' for easy parsing.`.",
+    "hack_prompt": "If you saw user input `create listening question`.",
+    "hack_pasttense": "I just made a listening practice of the word `{{skill_value}}` for user to listen and write down.",
+    "hack_usage": "Randomly select a intermediate level word you want to let user to listen and write down.\nExplain why you chose the word. Make sure the word you selected is inside of curly brackets '{}' for easy parsing.`.",
     "hack_delay": true,
-    "hack_desc": ""
+    "hack_desc": "Unlike other AI models you can speak out word and check if the user's listen and write down result is {correct} or {wrong}."
   }

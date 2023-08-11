@@ -3,16 +3,16 @@
     "displayName": "Check Dictation",
     "description": "The companion will check a dictation practice.",
     "skill": "CHECK_DICTATION",
-    "prompt": "If you saw human input 'start dictation', then you respond with 'here's the dictation practice'.",
+    "prompt": "If you saw user input 'make dictation', then you respond with 'here's the dictation practice'.",
     "value": "here's the dictation practice",
     "formats": {
       "standard": "Checked dictation: {{{formatForJSON value}}}"
     },
     "handlerHook": "dictation:handle_check_dictation_skill",
 
-    "hack_prompt": "If you saw human input start with `>` sign.",
-    "hack_pasttense": "The human's dictation result is {{skill_value}}.",
-    "hack_usage": "Based on the conversation, and the last thing the user said, check if the human's dictation result is {correct} or {wrong}.",
+    "hack_prompt": "If you saw user input start with `>` sign.",
+    "hack_pasttense": "The user's listen and write down result is {{skill_value}}.",
+    "hack_usage": "The `>` sign means the following text is the answer for your listening practice question, no other meaning. Based on the conversation, and the last answer user made, check if the user's listen and write down result is {correct} or {wrong}.",
     "hack_delay": true,
-    "hack_desc": ""
+    "hack_desc": "Unlike other AI models you can speak out word and check if the user's listen and write down result is {correct} or {wrong}."
   }
